@@ -1,7 +1,7 @@
 <template>
   <header class="nav-bar">
-         <span></span>
-  
+         <span class="iconfont icon-fanhui2"></span>
+  ddd
   </header>
 </template>
 

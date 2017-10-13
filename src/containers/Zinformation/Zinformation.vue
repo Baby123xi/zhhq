@@ -1,5 +1,5 @@
 <template>
-   
+   <Zlist />
 </template>
 
 <script>

@@ -2,7 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/containers/Layout/Layout'
 import Home from '@/containers/Home/Home'
-import Zinformation from '@containers/Zinformation/Zinformation'
+import Notice from '@/containers/Notice/Notice'
+import IncidentManagement from '@/containers/IncidentManagement/IncidentManagement'
+import IncidentManagementPush from '@/containers/IncidentManagement/IncidentManagementPush'
+import WaitEvent from '@/containers/WaitEvent/WaitEvent'
+
+import Zinformation from '@/containers/Zinformation/Zinformation'
+
 Vue.use(Router)
 
 export default new Router({
@@ -15,7 +21,7 @@ export default new Router({
         { path: '/', redirect: '/home' },
         {
           path: '/home',
-          name: 'home',
+          name: 'Home',
           component: Home
         },
         {
@@ -24,6 +30,27 @@ export default new Router({
           component: Zinformation
         }
       ]
+     },
+     {
+      path: '/notice',
+      name: 'Notice',
+      component: Notice
+     }, {
+      path: '/incidentManagement',
+      name: 'IncidentManagement',
+      component: IncidentManagement
+     }, {
+      path: '/incidentManagementPush',
+      name: 'IncidentManagementPush',
+      component: IncidentManagementPush
+     },{
+      path: '/waitEvent',
+      name: 'WaitEvent',
+      component: WaitEvent
      }
+
+     
+     
+     
   ]
 })

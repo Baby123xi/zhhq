@@ -1,8 +1,8 @@
 <template>
   <header class="nav-bar">
-        <span class="iconfont icon-fanhui2 back" @click="back()"></span>
+        <span  v-if="isBack" class="iconfont icon-fanhui2 back" @click="back()"></span>
         <h1 class="nav-bar-title">{{title}}</h1>
-       
+        <span  v-if="rightIcon&&rightIcon!=''" :class="['iconfont',rightIcon] " @click="rightAction()"></span>
  </header>
 </template>
 
@@ -13,6 +13,14 @@ export default {
     title:{
       type:String,
       require:true
+    },
+    isBack:{
+      type:Boolean,
+     default:true
+    },
+    rightIcon:{
+       type:String,
+        default:''
     }
   },
   data () {
@@ -23,6 +31,10 @@ export default {
   methods:{
     back(){
       this.$router.go(-1);
+    },
+    rightAction(){
+ 
+      this.$emit('rightActionF');
     }
   }
 }
@@ -36,12 +48,12 @@ export default {
   color:#fff;
   height:rem(100px);
   display:flex;
-  justify-content:row;
+  justify-content:space-between;
   align-items:center;
   padding:0 rem(15px);
   position:relative;
   box-shadow: 0  0  2px #fff;
-  .back{
+  .iconfont{
     font-size:rem(50px);
   }
   .nav-bar-title{

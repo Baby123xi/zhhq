@@ -34,7 +34,7 @@ export default {
 .nav-bar{
   background:#378fe8;
   color:#fff;
-  height:rem(100px);
+  height:$navHeight;
   display:flex;
   justify-content:row;
   align-items:center;

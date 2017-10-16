@@ -1,16 +1,21 @@
 <template>
   <div class="layout">
       <router-view></router-view>
+      <vFooter/>
  </div>
 </template>
 
 <script>
+import  vFooter from './Footer'
 export default {
   name: 'Layout',
   data () {
     return {
       
     }
+  },
+  components:{
+    vFooter
   }
 }
 </script>

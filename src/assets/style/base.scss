@@ -2,3 +2,15 @@ $font_size:75px;
 @function rem($pixels){
    @return  $pixels / $font_size*1rem;
  }
+ $navHeight:rem(100px);
+ $contentPadding: rem(20px);
+.webView {
+  width: 100%;
+  position: absolute;
+  top: $navHeight;
+  bottom: 0;
+  overflow: auto;
+}
+.bgWhite {
+  background: white;
+}

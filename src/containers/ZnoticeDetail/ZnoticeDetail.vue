@@ -1,21 +1,23 @@
 <template>
-  <div class="layout">
-      <router-view></router-view>
-      <vFooter/>
- </div>
+<div class="">
+  <NavBar title="公告详情"/>
+  <zdetail/>
+</div>
 </template>
 
 <script>
-import  vFooter from './Footer'
+import NavBar  from '../../components/NavBar/NavBar'
+import Zdetail  from '../../components/Zdetail/Zdetail'
 export default {
-  name: 'Layout',
+  name: '',
   data () {
     return {
       
     }
   },
-  components:{
-    vFooter
+  components: {
+      NavBar,
+      Zdetail
   }
 }
 </script>
@@ -23,5 +25,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
-
 </style>

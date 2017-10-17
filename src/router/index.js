@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/containers/Layout/Layout'
-import Home from '@/containers/Home/Home'
+import Home from '@/containers/Home/Home
 import Zinformation from '@/containers/Zinformation/Zinformation'
 import ZnoticeDetail from '@/containers/ZnoticeDetail/ZnoticeDetail'
-import ZpubAd from '@/containers/ZpubAd/ZpubAd'
+import ZpubAd from '@/containers/ZpubAd/ZpubAd
 Vue.use(Router)
 
 export default new Router({
@@ -17,7 +17,7 @@ export default new Router({
         { path: '/', redirect: '/home' },
         {
           path: '/home',
-          name: 'home',
+          name: 'Home',
           component: Home
         },
         {
@@ -36,6 +36,27 @@ export default new Router({
           component: ZpubAd
         }
       ]
+     },
+     {
+      path: '/notice',
+      name: 'Notice',
+      component: Notice
+     }, {
+      path: '/incidentManagement',
+      name: 'IncidentManagement',
+      component: IncidentManagement
+     }, {
+      path: '/incidentManagementPush',
+      name: 'IncidentManagementPush',
+      component: IncidentManagementPush
+     },{
+      path: '/waitEvent',
+      name: 'WaitEvent',
+      component: WaitEvent
      }
+
+     
+     
+     
   ]
 })

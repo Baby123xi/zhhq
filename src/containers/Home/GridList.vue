@@ -1,11 +1,12 @@
 <template>
-  <ul class="grid-list">
-      <li class="item" v-for="(v,index) in  list">
+  <div class="grid-list">
+      <router-link  :to="{name:v.routeName}"  class="item" v-for="(v,index) in  list" :key="index">
+       
          <img :src="v.icon"/>
          <span>{{v.name}}</span>
-      </li>     
+      </router-link >     
      
-  </ul>
+  </div>
 </template>
 
 <script>
@@ -14,12 +15,12 @@ export default {
   data () {
     return {
        list:[
-           {name:"公告通知",icon:require('../../assets/images/icon_1.png')},
-            {name:"待办事项",icon:require('../../assets/images/icon_2.png')},
-            {name:"网格事件上报",icon:require('../../assets/images/icon_3.png')},
-            {name:"网格任务管理",icon:require('../../assets/images/icon_4.png')},
-            {name:"日程安排",icon:require('../../assets/images/icon_5.png')},
-            {name:"工作日志",icon:require('../../assets/images/icon_6.png')}
+           {name:"公告通知",icon:require('../../assets/images/icon_1.png'),routeName:'Notice'},
+            {name:"待办事项",icon:require('../../assets/images/icon_2.png'),routeName:'WaitEvent'},
+            {name:"网格事件上报",icon:require('../../assets/images/icon_3.png'),routeName:'IncidentManagement'},
+            {name:"网格任务管理",icon:require('../../assets/images/icon_4.png'),routeName:'Notice'},
+            {name:"日程安排",icon:require('../../assets/images/icon_5.png'),routeName:'Notice'},
+            {name:"工作日志",icon:require('../../assets/images/icon_6.png'),routeName:'Notice'}
        ]
     }
   }
@@ -30,20 +31,24 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .grid-list{
-    padding:0  rem(55px);
+   
     display:flex;
     flex-wrap:wrap;
     flex-direction:row;
     text-align:center;
-    border-radius:50%;
+   
+    height: 100%;
+    background: #fff;
     .item{
-      margin:rem(10px) 0;
+      padding: rem(10px);
+      margin:rem(15px) 0;
       flex-basis:33.333%;
       display:flex;
       flex-wrap:wrap;
       flex-direction:column;
      justify-content: center;
      align-items:center;
+     box-sizing: border-box;
       img{
           width:rem(110px);
            height:rem(110px);

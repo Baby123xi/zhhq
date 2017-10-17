@@ -1,10 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/containers/Layout/Layout'
-import Home from '@/containers/Home/Home
+import Home from '@/containers/Home/Home'
 import Zinformation from '@/containers/Zinformation/Zinformation'
 import ZnoticeDetail from '@/containers/ZnoticeDetail/ZnoticeDetail'
-import ZpubAd from '@/containers/ZpubAd/ZpubAd
+import ZpubAd from '@/containers/ZpubAd/ZpubAd'
+import Notice from '@/containers/Notice/Notice'
+import IncidentManagement from '@/containers/IncidentManagement/IncidentManagement'
+import IncidentManagementPush from '@/containers/IncidentManagementPush/IncidentManagementPush'
+import WaitEvent from '@/containers/WaitEvent/WaitEvent'
+
 Vue.use(Router)
 
 export default new Router({

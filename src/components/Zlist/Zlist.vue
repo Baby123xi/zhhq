@@ -39,7 +39,7 @@ export default {
     }
     .list {
       height:rem(100px);
-      margin:10px rem(25px);
+      margin:15px rem(25px);
       // margin-bottom: 6px;
       border-bottom: 1px dashed lightgray;
       // &:last-child {

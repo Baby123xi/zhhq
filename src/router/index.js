@@ -7,7 +7,7 @@ import ZnoticeDetail from '@/containers/ZnoticeDetail/ZnoticeDetail'
 import ZpubAd from '@/containers/ZpubAd/ZpubAd'
 import Notice from '@/containers/Notice/Notice'
 import IncidentManagement from '@/containers/IncidentManagement/IncidentManagement'
-import IncidentManagementPush from '@/containers/IncidentManagementPush/IncidentManagementPush'
+import IncidentManagementPush from '@/containers/IncidentManagement/IncidentManagementPush'
 import WaitEvent from '@/containers/WaitEvent/WaitEvent'
 
 Vue.use(Router)
@@ -24,21 +24,6 @@ export default new Router({
           path: '/home',
           name: 'Home',
           component: Home
-        },
-        {
-          path: '/zinformation',
-          name: 'zinformation',
-          component: Zinformation
-        },
-        {
-          path: '/znoticeDetail',
-          name: 'znoticeDetail',
-          component: ZnoticeDetail
-        },
-        {
-          path: '/zpubAd',
-          name: 'zpubAd',
-          component: ZpubAd
         }
       ]
      },
@@ -58,6 +43,14 @@ export default new Router({
       path: '/waitEvent',
       name: 'WaitEvent',
       component: WaitEvent
+     },{
+      path: '/zinformation',
+      name: 'Zinformation',
+      component: Zinformation
+     },{
+      path: '/znoticeDetail',
+      name: 'ZnoticeDetail',
+      component: ZnoticeDetail
      }
 
      

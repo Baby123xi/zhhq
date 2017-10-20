@@ -15,7 +15,7 @@ export default {
   data () {
     return {
        list:[
-           {name:"公告通知",icon:require('../../assets/images/icon_1.png'),routeName:'Notice'},
+           {name:"通知公告",icon:require('../../assets/images/icon_1.png'),routeName:'Notice'},
             {name:"待办事项",icon:require('../../assets/images/icon_2.png'),routeName:'WaitEvent'},
             {name:"网格事件上报",icon:require('../../assets/images/icon_3.png'),routeName:'IncidentManagement'},
             {name:"网格任务管理",icon:require('../../assets/images/icon_4.png'),routeName:'Notice'},

@@ -9,6 +9,7 @@ import Notice from '@/containers/Notice/Notice'
 import IncidentManagement from '@/containers/IncidentManagement/IncidentManagement'
 import IncidentManagementPush from '@/containers/IncidentManagement/IncidentManagementPush'
 import WaitEvent from '@/containers/WaitEvent/WaitEvent'
+import Zdate from '@/components/Zdate/Zdate'
 
 Vue.use(Router)
 
@@ -51,10 +52,11 @@ export default new Router({
       path: '/znoticeDetail',
       name: 'ZnoticeDetail',
       component: ZnoticeDetail
+     },{
+      path: '/zdate',
+      name: 'Zdate',
+      component: Zdate
      }
-
-     
-     
      
   ]
 })

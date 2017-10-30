@@ -31,7 +31,7 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .grid-list{
-   
+       width: 100%;
     display:flex;
     flex-wrap:wrap;
     flex-direction:row;
@@ -40,8 +40,9 @@ export default {
     height: 100%;
     background: #fff;
     .item{
-      padding: rem(10px);
-      margin:rem(15px) 0;
+      position:relative;
+      padding:rem(25px) rem(10px);
+     
       flex-basis:33.333%;
       display:flex;
       flex-wrap:wrap;
@@ -49,6 +50,26 @@ export default {
      justify-content: center;
      align-items:center;
      box-sizing: border-box;
+     &:before{
+        position: absolute;
+    content: "";
+    width: 1px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: #f2f2f2;
+    z-index: 99;
+     }
+     &:after{
+         position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #f2f2f2;
+    z-index: 99;
+     }
       img{
           width:rem(110px);
            height:rem(110px);

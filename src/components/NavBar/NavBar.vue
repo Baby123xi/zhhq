@@ -44,7 +44,9 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .nav-bar{
-  background:#378fe8;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  background:#288bf0;
+;
   color:#fff;
   height:$navHeight;
   display:flex;

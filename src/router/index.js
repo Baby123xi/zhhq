@@ -7,9 +7,12 @@ import ZnoticeDetail from '@/containers/ZnoticeDetail/ZnoticeDetail'
 import ZpubAd from '@/containers/ZpubAd/ZpubAd'
 import Notice from '@/containers/Notice/Notice'
 import IncidentManagement from '@/containers/IncidentManagement/IncidentManagement'
-import IncidentManagementPush from '@/containers/IncidentManagementPush/IncidentManagementPush'
+import IncidentManagementPush from '@/containers/IncidentManagement/IncidentManagementPush'
 import WaitEvent from '@/containers/WaitEvent/WaitEvent'
 
+
+import My from '@/containers/My/My'
+import Login from '@/containers/Login/Login'
 Vue.use(Router)
 
 export default new Router({
@@ -24,7 +27,11 @@ export default new Router({
           path: '/home',
           name: 'Home',
           component: Home
-        },
+        },{
+      path: '/my',
+      name: 'My',
+      component: My
+     },
         {
           path: '/zinformation',
           name: 'zinformation',
@@ -58,8 +65,11 @@ export default new Router({
       path: '/waitEvent',
       name: 'WaitEvent',
       component: WaitEvent
+     },{
+      path: '/login',
+      name: 'Login',
+      component: Login
      }
-
      
      
      

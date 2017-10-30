@@ -84,4 +84,10 @@ table {
   text-align: center;
   margin: 20px;
 }
+ .VueCarousel-pagination{
+
+      position: absolute;
+      bottom:10px;
+    
+ }
 </style>

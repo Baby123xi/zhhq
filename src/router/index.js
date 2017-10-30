@@ -29,28 +29,10 @@ export default new Router({
           path: '/home',
           name: 'Home',
           component: Home
-<<<<<<< HEAD
         },{
       path: '/my',
       name: 'My',
       component: My
-     },
-        {
-          path: '/zinformation',
-          name: 'zinformation',
-          component: Zinformation
-        },
-        {
-          path: '/znoticeDetail',
-          name: 'znoticeDetail',
-          component: ZnoticeDetail
-        },
-        {
-          path: '/zpubAd',
-          name: 'zpubAd',
-          component: ZpubAd
-=======
->>>>>>> 9bcf4f49cc897b51482511315dacbb632be98eab
         }
       ]
      },
@@ -71,14 +53,10 @@ export default new Router({
       name: 'WaitEvent',
       component: WaitEvent
      },{
-<<<<<<< HEAD
       path: '/login',
       name: 'Login',
       component: Login
-     }
-     
-=======
-      path: '/zinformation',
+     },{path: '/zinformation',
       name: 'Zinformation',
       component: Zinformation
      },{
@@ -94,7 +72,6 @@ export default new Router({
       name: 'Zalert',
       component: Zalert
      }
->>>>>>> 9bcf4f49cc897b51482511315dacbb632be98eab
      
      
   ]

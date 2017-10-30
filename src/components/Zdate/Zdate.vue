@@ -1,5 +1,6 @@
 <template>
 <div>
+  <NavBar title="日程安排" :isBack="true"/>
   <vue-event-calendar
       :events="demoEvents"
       @day-changed="handleDayChanged"
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+import NavBar  from '../NavBar/NavBar'
 let today = new Date()
 export default {
   data () {
@@ -40,7 +42,7 @@ export default {
         desc: ' this is the longlonglong description'
       },{
         date: `${today.getFullYear()}/${today.getMonth() + 1}/24`,
-        title: 'num  is very import'
+        desc: 'num  is very import'
       },{
         date: `${today.getFullYear()}/${today.getMonth() === 11 ? 1 : today.getMonth() + 2}/06`,
         title: 'together',
@@ -57,11 +59,19 @@ export default {
         // document.getElementsByClassName('events-wrapper')[0].style.display = 'none'
           alert('month-changed')
       }
+  },
+  components: {
+    NavBar
   }
 }
 </script>
 
 <style>
+body, html {
+  background-color: #FFF;
+}
+
+
   .__vev_calendar-wrapper .events-wrapper .event-item .title {
     text-align: left;
     padding-right: 120px;
@@ -72,9 +82,16 @@ export default {
   .__vev_calendar-wrapper .events-wrapper .event-item .desc {
     text-align: left;
     text-indent: 2em;
-
+    line-height: 1.4;
+  }
+  .__vev_calendar-wrapper .events-wrapper .date {
+    padding: 6px 0;
   }
   .__vev_calendar-wrapper .events-wrapper {
     /* display: none; */
   }
+  .__vev_calendar-wrapper .cal-wrapper .cal-body .weeks, .__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item .date-num, .__vev_calendar-wrapper .cal-wrapper .cal-header .title {
+    font-size: 16px;
+}
+
 </style>

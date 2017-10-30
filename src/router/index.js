@@ -10,6 +10,7 @@ import IncidentManagement from '@/containers/IncidentManagement/IncidentManageme
 import IncidentManagementPush from '@/containers/IncidentManagement/IncidentManagementPush'
 import WaitEvent from '@/containers/WaitEvent/WaitEvent'
 import Zdate from '@/components/Zdate/Zdate'
+import Zalert from '@/components/Zalert/Zalert'
 
 Vue.use(Router)
 
@@ -56,7 +57,12 @@ export default new Router({
       path: '/zdate',
       name: 'Zdate',
       component: Zdate
+     },{
+      path: '/zalert',
+      name: 'Zalert',
+      component: Zalert
      }
+     
      
   ]
 })

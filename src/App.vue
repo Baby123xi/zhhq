@@ -80,4 +80,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+.t-center{
+  text-align: center;
+  margin: 20px;
+}
 </style>

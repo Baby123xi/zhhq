@@ -1,19 +1,24 @@
 <template>
+<div>
+<router-link to="/ZnoticeDetail?id=1"  class="" v-for="(v,index) in noticeList" :key="index">
   <div class="notice-item">
       <div class="item-top">
-          <h2>和平街道</h2>
-          <span>2016-9-5</span>
+          <h2>{{ v.fabuman }}</h2>
+          <span>{{ v.datetime }}</span>
       </div>
     <div class="item-bottom">
-          <p>关于和平街道9月20号会议</p>
-          <span>未读</span>
+          <p>{{ v.title }}</p>
+          <span>{{ v.shifou }}</span>
     </div>
   </div>
+</router-link>
+</div>
 </template>
 
 <script>
 export default {
   name: 'NoticeItem',
+  props: ['noticeList'],
   data () {
     return {
       

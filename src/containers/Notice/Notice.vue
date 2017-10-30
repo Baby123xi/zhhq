@@ -2,7 +2,7 @@
   <div class="notice">
           <NavBar title="公告通知" />
            <div  class="list">
-              <NoticeItem v-for="(v,index) in 10" :key="index"/>
+              <NoticeItem :noticeList="noticeList1"/>
            </div>
   </div>
 </template>
@@ -14,7 +14,21 @@ export default {
   name: 'Notice',
   data () {
     return {
-      
+      noticeList1: []
+    }
+  },
+  mounted(){
+    this.getNoticeDetail()
+  },
+  methods: {
+    getNoticeDetail() {
+      this.$http.get('/app/demoAction.action?demo')
+      .then((res) => {
+        this.noticeList = res.data.demoList
+      })
+      .catch((res) => {
+        console.log(res)
+      })
     }
   },
   components:{

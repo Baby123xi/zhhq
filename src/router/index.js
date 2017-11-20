@@ -13,6 +13,9 @@ import Zdate from '@/components/Zdate/Zdate'
 import Zalert from '@/components/Zalert/Zalert'
 import ZpubDate from '@/containers/ZpubDate/ZpubDate'
 
+
+import My from '@/containers/My/My'
+import Login from '@/containers/Login/Login'
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +30,10 @@ export default new Router({
           path: '/home',
           name: 'Home',
           component: Home
+        },{
+      path: '/my',
+      name: 'My',
+      component: My
         }
       ]
      },
@@ -47,7 +54,10 @@ export default new Router({
       name: 'WaitEvent',
       component: WaitEvent
      },{
-      path: '/zinformation',
+      path: '/login',
+      name: 'Login',
+      component: Login
+     },{path: '/zinformation',
       name: 'Zinformation',
       component: Zinformation
      },{

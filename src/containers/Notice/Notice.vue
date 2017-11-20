@@ -19,14 +19,14 @@ export default {
       noticeList1: []
     }
   },
-  mounted(){
+  created(){
     this.getNoticeDetail()
     // '/app/demoAction.action?xType=selectx'
   },
   methods: {
     getNoticeDetail() {
       this.$http.get(options.searchAd)
-      .then((res) => {
+     .then((res) => {
         this.noticeList1 = res.data.demoList
         // console.log(this.noticeList1)
         for (var i = 0; i < this.noticeList1.length; i++) {

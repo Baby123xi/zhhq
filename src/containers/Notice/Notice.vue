@@ -17,12 +17,12 @@ export default {
       noticeList1: []
     }
   },
-  mounted(){
+  created(){
     this.getNoticeDetail()
   },
   methods: {
     getNoticeDetail() {
-      this.$http.get('/app/demoAction.action?demo')
+      this.$http.get('/app/demoAction.action?xType=selectx')
       .then((res) => {
         this.noticeList = res.data.demoList
       })

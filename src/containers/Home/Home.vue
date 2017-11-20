@@ -48,7 +48,7 @@ export default {
 
 
   .VueCarousel{
-$h: rem(450px);
+$h: rem(430px);
  height:$h;
 
   width: 100%;

@@ -1,31 +1,54 @@
 <template>
 <div class="webView bgWhite">
   <div class="inforDetail ">
-    <div class="dTitle">item.title</div>
+    <div class="dTitle">{{ dTitle }}</div>
     <div class="dTime">
-      <div class="time">2017-10-22</div>
+      <div class="time">{{ time }}</div>
       <div class="name">
-        <span class="">发布人：</span>
-        <span class="author">李明</span>
+        <!-- <span class="">发布人：</span> -->
+        <span class="author">{{ author }}</span>
       </div>
     </div>
     <div class="dImg">
       <img src="../../assets/logo.png" />
     </div>
-    <div class="dContent">大家都知道出生在文莱的吴尊家世代均为富豪，从小生活环境就是优渥的。在《爸爸去哪儿5》里面，环境就算是对于普通城市家庭的孩子来说也算不上舒适了，但是从来没见过neinei和max对环境的抱怨和不满。
-反而他们出来的镜头都是斯文有礼的。
-节目一开播，max就因为太热了，而经常头发总是湿漉漉的。
-吃饭时候，还是要拿小风扇给爸爸、姐姐吹凉。</div>
+    <div class="dContent">{{ dContent }}</div>
   </div>
 </div>
 </template>
 
 <script>
+import { options } from '../../api/common'
+import { add0, getDate } from '../../api/timeFormat'
 export default {
   name: '',
+  mounted() {
+    this.getMsgDetail()
+    // console.log(this.$route.query.ids)
+    // console.log(options.searchIdNow + this.$route.query.ids)
+  },
   data () {
     return {
-      
+      dTitle: '',
+      time: '',
+      author: '',
+      dContent: ''
+    }
+  },
+  methods: {
+    getMsgDetail() {
+      this.$http.get(options.searchIdNow + this.$route.query.ids)
+      .then((res) => {
+        // console.log(res.data.demoList)
+        var data = res.data
+        if(data.result === '') {
+          var dataList = data.demoList[0]
+          this.dTitle = dataList.title
+          this.time = getDate(dataList.datetime, '-')
+          this.author = '发布人：' + dataList.fabuman
+          this.dContent = dataList.tearter
+        }
+      })
     }
   }
 }

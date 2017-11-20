@@ -11,6 +11,7 @@ import IncidentManagementPush from '@/containers/IncidentManagement/IncidentMana
 import WaitEvent from '@/containers/WaitEvent/WaitEvent'
 import Zdate from '@/components/Zdate/Zdate'
 import Zalert from '@/components/Zalert/Zalert'
+import ZpubDate from '@/containers/ZpubDate/ZpubDate'
 
 
 import My from '@/containers/My/My'
@@ -71,6 +72,14 @@ export default new Router({
       path: '/zalert',
       name: 'Zalert',
       component: Zalert
+     },{
+      path: '/zpubAd',
+      name: 'ZpubAd',
+      component: ZpubAd
+     },{
+      path: '/zpubDate',
+      name: 'ZpubDate',
+      component: ZpubDate
      }
      
      

@@ -3,31 +3,40 @@
   <div class="publishAd">
     <div class="pubTitle item">
       <label for="">发布标题</label>
-      <input type="text" @focus="isFocus=true" @blur="blurInput()"/>
+      <input type="text" v-model="pubTil" @focus="isFocus=true" @blur="blurInput()"/>
     </div>
     <div class="pubMan item">
       <label for="">发 布 人</label>
-      <input type="text" @focus="isFocus=true" @blur="blurInput()"/>
+      <input type="text" v-model="pubMan" @focus="isFocus=true" @blur="blurInput()"/>
     </div>
     <div class="pubTime item">
       <label for="">发布时间</label>
-      <input type="date" />
+      <input type="date" v-model="pubTim" />
     </div>
     <div class="pubContent ">
       <div class="contentTit">发布内容</div>
-      <textarea @focus="isFocus=true" @blur="blurInput()"></textarea>
+      <textarea v-model="pubCon" @focus="isFocus=true" @blur="blurInput()"></textarea>
     </div>
-    <div class="report" v-show="!isFocus">发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;布</div>
+    <div class="report" v-show="!isFocus" @click="inforCheck">发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;布</div>
   </div>
+  <zalert v-show="isShow" :content="alertCon" @alert="alertClick"/>
 </div>
 </template>
 
 <script>
+import Zalert from '../Zalert/Zalert'
+import { options } from '../../api/common'
 export default {
-  name: '',
+  name: 'zpublish',
   data () {
     return {
-      isFocus: false
+      isFocus: false,
+      isShow: false,
+      alertCon: '',
+      pubTil: '',
+      pubMan: '',
+      pubTim: '',
+      pubCon: ''
     }
   },
   mounted() {
@@ -39,7 +48,46 @@ export default {
       setTimeout(function() {
         _vue.isFocus = false;
       }, 100);
+    },
+    inforAlert(inf) {
+      this.isShow = true
+      this.alertCon = inf
+    },
+    inforCheck() {
+      if (this.pubTil == '' || !this.pubTil) {
+        this.inforAlert('请输入标题')
+        return    
+      }
+      if (this.pubMan == '' || !this.pubTil) {
+        this.inforAlert('请输入发布人')
+        return    
+      }
+      if (this.pubTim == '' || !this.pubTil) {
+        this.inforAlert('请输入时间')
+        return    
+      }
+      if (this.pubCon == '' || !this.pubTil) {
+        this.inforAlert('请输入内容')
+        return    
+      }
+      var pubAdUrl = "&title="+this.pubTil+"&datetime="+this.pubTim+"&shifou=N&fabuman="+this.pubMan+"&tearter="+this.pubCon
+      this.pubAd(pubAdUrl)
+    },
+    pubAd(pubStr){
+      this.$http.get(options.pubAd + pubStr)
+      .then((res) => {
+        if (res.data.result == "success") {
+          this.inforAlert('发布成功')
+        }
+      })
+    },
+    alertClick() {
+      this.isShow = !this.isShow
+      this.$router.go(-1);
     }
+  },
+  components: {
+    Zalert
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-<div class="modal-mask" v-show="showw">
+<div class="modal-mask">
     <div class="modal-confirm">
         <h2 class="confirm-header">
             <i class="iconfont icon-questioncircle"></i> {{ title }}
@@ -18,18 +18,20 @@
 <script>
 export default {
   name: 'AlertConfirm',
-  props: ["showw"],
+  props: {
+    content: {
+      type: String,
+      require: true
+    }
+  },
   data () {
     return {
-      title: '发布公告',
-      content: '信息发布成功！'
+      title: '温馨提示'
     }
   },
   methods:{
-   op(){
-      this.showw = false
-    //   document.body.style.overflow = ''
-    // this.$http.get('/app/demoAction.action?demo')
+    op(){
+      this.$emit("alert")
     },
     alert(setting){
       this.title = setting.title ||  '标题'

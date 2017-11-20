@@ -1,6 +1,6 @@
 <template>
 <div>
-<router-link to="/ZnoticeDetail?id=1"  class="" v-for="(v,index) in noticeList" :key="index">
+<router-link :to="{path: 'ZnoticeDetail', query: {ids: v.ids}}"  class="" v-for="(v,index) in noticeList" :key="index">
   <div class="notice-item">
       <div class="item-top">
           <h2>{{ v.fabuman }}</h2>
@@ -8,7 +8,8 @@
       </div>
     <div class="item-bottom">
           <p>{{ v.title }}</p>
-          <span>{{ v.shifou }}</span>
+          
+          <span :class="{'blue': v.shifou === '已读'}">{{ v.shifou }}</span>
     </div>
   </div>
 </router-link>
@@ -16,13 +17,21 @@
 </template>
 
 <script>
+import { add0,getDate } from '../../api/timeFormat'
 export default {
   name: 'NoticeItem',
   props: ['noticeList'],
+  created() {
+    // this.getNoticeList()
+    
+  },
   data () {
     return {
       
     }
+  },
+  methods: {
+
   }
 }
 </script>
@@ -55,6 +64,9 @@ export default {
            }
            span{
                color:#f00;
+               &.blue {
+                   color: blue;
+               }
            }
            border-bottom:1px solid #e6e5e5;
     }

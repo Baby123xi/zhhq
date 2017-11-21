@@ -36,6 +36,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
   
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -83,4 +84,10 @@ table {
   text-align: center;
   margin: 20px;
 }
+ .VueCarousel-pagination{
+
+      position: absolute;
+      bottom:10px;
+    
+ }
 </style>

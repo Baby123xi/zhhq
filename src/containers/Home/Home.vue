@@ -1,20 +1,29 @@
 <template>
   <div class="home">
        <NavBar title="智慧社区" :isBack="false"/>
-      <!-- <div class="home-top"> -->
-           
-           <div class="banner">
-              <img  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1508484409&di=b51e151d44eb0e77a77497c0cb1346ae&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.educity.cn%2Fimg_11%2F267%2F2014011011%2F101309110354.jpg"/>
-           </div>
-         <!-- <div class="hd"></div> -->
-      <!-- </div> -->
-      <GridList/>
+       <div class="banner">
+         <Carousel  paginationActiveColor="#fff"  :paginationPadding=3  :paginationSize=6  paginationColor="#dbdbdb" :perPage=1>
+        
+            <slide>
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496648326676&di=eb823b3bf317b9300368e52313448779&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F29381f30e924b899549c524b6f061d950a7bf625.jpg"/>
+            </slide>
+        
+            <slide>
+              <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1496648326676&di=eb823b3bf317b9300368e52313448779&imgtype=0&src=http%3A%2F%2Ff.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F29381f30e924b899549c524b6f061d950a7bf625.jpg"/>
+            </slide>
+         </Carousel>
+        </div>
+       <GridList/>
+          
+       
+     
   </div>
 </template>
 
 <script>
 import NavBar  from '../../components/NavBar/NavBar'
 import GridList  from './GridList'
+import { Carousel, Slide } from 'vue-carousel';
 export default {
   name: 'Home',
   data () {
@@ -25,40 +34,47 @@ export default {
   components:{
       
       NavBar,
-      GridList
+      GridList,
+      Carousel,
+      Slide
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .home{
   background:#fff;
-  // .home-top{
-  // position:relative;
-  // height:rem(400px);
-  // overflow:hidden;
-  .banner{
-    
-    height: rem(200px*2);
-    width:100%;
+
+
+  .VueCarousel{
+$h: rem(430px);
+ height:$h;
+
+  width: 100%;
+
+
+  .VueCarousel-slide{
+    position: relative;
+      width: 100%;
+      height:$h;
+
     img{
-      height: 100%;
-        width:100%;
-    }
-  //  } 
-   .hd{
-     position:absolute;
-     z-index:999;
-     bottom:rem(-90px/1.8);
-     height:rem(90px);
-     width:100%;
-     border-radius:100%;
-     background:#fff;
+         width: 100%;
+         height:100%;
+         vertical-align: middle;
+
    }
+
+
+  }
+ 
 }
+
+  
+ 
 }
+
 
 
 </style>

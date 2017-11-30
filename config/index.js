@@ -23,6 +23,7 @@ module.exports = {
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
+    // http://192.168.2.100:8080/zhxz
     bundleAnalyzerReport: process.env.npm_config_report
   },
   dev: {

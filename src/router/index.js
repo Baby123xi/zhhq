@@ -12,6 +12,9 @@ import WaitEvent from '@/containers/WaitEvent/WaitEvent'
 import Zdate from '@/components/Zdate/Zdate'
 import Zalert from '@/components/Zalert/Zalert'
 import ZpubDate from '@/containers/ZpubDate/ZpubDate'
+import ZtextMsg from '@/containers/ZtextMsg/ZtextMsg'
+import ZtextMsgDetail from '@/containers/ZtextMsg/ZtextMsgDetail'
+import ZtextMsgD from '@/containers/ZtextMsgD/ZtextMsgD'
 
 
 import My from '@/containers/My/My'
@@ -80,6 +83,18 @@ export default new Router({
       path: '/zpubDate',
       name: 'ZpubDate',
       component: ZpubDate
+     },{
+      path: '/ztextMsg',
+      name: 'ZtextMsg',
+      component: ZtextMsg
+     },{
+      path: '/ztextMsgDetail',
+      name: 'ZtextMsgDetail',
+      component: ZtextMsgDetail
+     },{
+      path: '/ztextMsgD',
+      name: 'ZtextMsgD',
+      component: ZtextMsgD
      }
      
      

@@ -18,12 +18,14 @@
 </template>
 
 <script>
+import NavBar from '../../components/NavBar/NavBar'
 import { options } from '../../api/common'
 import { add0, getDate } from '../../api/timeFormat'
 export default {
   name: '',
   created() {
-    var ips = options.searchIdNow + this.$route.query.ids
+    var ips = options.searchDateIds + this.$route.query.taskIds
+    // console.log(ips)
     this.getMsgDetail(ips)
     // console.log(this.$route.query.ids)
     // console.log(options.searchIdNow + this.$route.query.ids)
@@ -42,15 +44,20 @@ export default {
       .then((res) => {
         // console.log(res.data.demoList)
         var data = res.data
+        var fabuman = "拟卿"
         if(data.result === '') {
           var dataList = data.demoList[0]
           this.dTitle = dataList.title
-          this.time = getDate(dataList.datetime, '-')
-          this.author = '发布人：' + dataList.fabuman
-          this.dContent = dataList.tearter
+          this.time =  getDate(dataList.date, "/")
+          this.author = '发布人：' + fabuman
+          this.dContent = dataList.descs
+          console.log(dataList)
         }
       })
     }
+  },
+  components: {
+    NavBar
   }
 }
 </script>

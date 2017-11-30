@@ -20,7 +20,7 @@ export default {
             {name:"网格事件上报",icon:require('../../assets/images/icon_3.png'),routeName:'IncidentManagement'},
             {name:"网格任务管理",icon:require('../../assets/images/icon_4.png'),routeName:'Notice'},
             {name:"日程安排",icon:require('../../assets/images/icon_5.png'),routeName:'Zdate'},
-            {name:"工作日志",icon:require('../../assets/images/icon_6.png'),routeName:'Notice'}
+            {name:"工作日志",icon:require('../../assets/images/icon_6.png'),routeName:'ZtextMsg'}
        ]
     }
   }

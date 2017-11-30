@@ -3,6 +3,7 @@ export const baseUrl = '/app'
 export const options = {
   searchAd: baseUrl + '/demoAction.action?demo&xType=selectx',
   searchDate: baseUrl + '/demoAction.action?demo&xType=selectc',
+  searchDateIds: baseUrl + '/demoAction.action?demo&xType=selectc&taskIds=',
   searchIdNow: baseUrl + '/demoAction.action?demo&xType=selectx&ids=',
   pubAd: baseUrl + '/demoAction.action?dateAll&yType=add_A',
   pubDate: baseUrl + '/demoAction.action?dateAll&yType=add_B',

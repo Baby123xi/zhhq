@@ -61,7 +61,6 @@ export default {
       this.$http.get(options.searchDate)
       .then((res) => {
         this.demoEvents = res.data.demoList
-        console.log(this.demoEvents)
         for (var i = 0; i < this.demoEvents.length; i++) {
           this.demoEvents[i].date = getDate(this.demoEvents[i].date, "/")
           this.demoEvents[i].desc = this.demoEvents[i].descs

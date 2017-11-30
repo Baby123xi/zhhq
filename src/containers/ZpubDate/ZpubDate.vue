@@ -88,7 +88,6 @@ export default {
       }
       
       var pubDatUrl = "&title="+this.title+"&date="+this.date+"&taskEnd="+this.dateEnd+"&descs="+this.desc+"&taskType="+this.type
-      console.log(pubDatUrl)
       this.pubAd(pubDatUrl)
     },
     pubAd(pubStr){
@@ -96,14 +95,13 @@ export default {
       .then((res) => {
         if (res.data.result == "success") {
           console.log(res.data.msg)
-          // this.inforAlert('新建成功')
-          // this.back()
+          this.inforAlert('新建成功')
         }
       })
     },
     alertClick() {
       this.isShow = !this.isShow
-      console.log('点击了派发事件---11')
+      this.back()
     }
   },
   components: {

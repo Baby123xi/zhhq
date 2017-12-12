@@ -23,7 +23,7 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .header{
-    position:relative;
+    position: relative;
     margin:rem(15px) 0;
     height:rem(80px);
     display:flex;

@@ -47,6 +47,7 @@ export default {
          padding: 10px 0;
          font-size: 14px;
          display: flex;
+         color: #000;
 
         h2{
             font-size: 14px;

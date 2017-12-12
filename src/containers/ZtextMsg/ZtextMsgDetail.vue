@@ -25,7 +25,6 @@ export default {
   name: '',
   created() {
     var ips = options.searchDateIds + this.$route.query.taskIds
-    // console.log(ips)
     this.getMsgDetail(ips)
     // console.log(this.$route.query.ids)
     // console.log(options.searchIdNow + this.$route.query.ids)
@@ -51,7 +50,6 @@ export default {
           this.time =  getDate(dataList.date, "/")
           this.author = '发布人：' + fabuman
           this.dContent = dataList.descs
-          console.log(dataList)
         }
       })
     }

@@ -1,6 +1,7 @@
 <template>
   <div class="" style="height:100%">
     <NavBar    leftIcon="icon-fanhui"   fixed="true" title="工作日志" @leftActive="back()"  />
+    <CheckBox @taskSearch="taskSearch"/>
     <div class="logList" style="width: 100%">
       <router-link :to="{path: 'ZtextMsgD', query: {taskIds: v.taskIds}}"  class="" v-for="(v,index) in logList" :key="index" :logList=logList>
         <div class="listItem">
@@ -12,26 +13,34 @@
         </div>
       </router-link>
     </div>
+    
   </div>
 </template>
 
 <script>
 import NavBar  from '../../components/NavBar/NavBar'
+import CheckBox from '../../components/CheckBox/CheckBox'
 import { options } from '../../api/common'
 import { add0, getDate } from '../../api/timeFormat'
 export default {
-  name: '',
+  name: 'ztextMsg',
   data () {
     return {
       logList: []
     }
   },
   created() {
-    this.getLogList()
+    let searchDate = options.searchDate
+    this.getLogList(searchDate)
   },
   methods: {
-    getLogList() {
-      this.$http.get(options.searchDate)
+    taskSearch(selMsg, intMsg) {
+      let searchDate = options.searchDate + '&' + selMsg + '=' + intMsg
+      console.log(searchDate)
+      // this.getLogList(searchDate)
+    },
+    getLogList(searchDate) {
+      this.$http.get(searchDate)
      .then((res) => {
         this.logList = res.data.demoList
         for (var i = 0; i < this.logList.length; i++) {
@@ -44,7 +53,8 @@ export default {
     }
   },
   components: {
-      NavBar
+      NavBar,
+      CheckBox
   }
 }
 </script>

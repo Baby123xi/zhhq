@@ -54,8 +54,14 @@ export default {
       this.alertCon = inf
     },
     inforCheck() {
+      var len = this.pubTil.length
+      console.log(len)
       if (this.pubTil == '' || !this.pubTil) {
         this.inforAlert('请输入标题')
+        return    
+      }
+      if (this.pubTil.length > 25) {
+        this.inforAlert('您输入的长度超过25字体长度，请重新输入')
         return    
       }
       if (this.pubMan == '' || !this.pubTil) {
@@ -78,12 +84,20 @@ export default {
       .then((res) => {
         if (res.data.result == "success") {
           this.inforAlert('发布成功')
+          this.pubTil = ''
+          this.pubMan = ''
+          this.pubTim = ''
+          this.pubCon = ''
+          // this.$router.go(-1)
         }
+      })
+      .catch((res) => {
+        this.inforAlert('发布失败，请稍后重试！')
       })
     },
     alertClick() {
       this.isShow = !this.isShow
-      this.$router.go(-1);
+      // this.$router.go(-1);
     }
   },
   components: {

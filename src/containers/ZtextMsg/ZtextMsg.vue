@@ -36,8 +36,8 @@ export default {
   methods: {
     taskSearchs(selMsg, intMsg) {
       let searchDate = options.searchDate + '&' + selMsg + '=' + intMsg
-      console.log(searchDate)
-      // this.getLogList(searchDate)
+      // console.log(searchDate)
+      this.getLogList(searchDate)
     },
     getLogList(searchDate) {
       this.$http.get(searchDate)

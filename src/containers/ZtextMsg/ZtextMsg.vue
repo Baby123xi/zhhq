@@ -1,8 +1,9 @@
 <template>
   <div class="" style="height:100%">
     <NavBar    leftIcon="icon-fanhui"   fixed="true" title="工作日志" @leftActive="back()"  />
-    <CheckBox @taskSearch="taskSearchs"/>
+  
     <div class="logList" style="width: 100%">
+      <CheckBox @taskSearch="taskSearchs"/>
       <router-link :to="{path: 'ZtextMsgD', query: {taskIds: v.taskIds}}"  class="" v-for="(v,index) in logList" :key="index" :logList="logList">
         <div class="listItem">
             <div class="listItemTop">
@@ -65,6 +66,7 @@ export default {
   .logList {
     background: lightgray;
     padding: 10px 0;
+    padding-top:$navHeight;
     .listItem {
       width: 90%;
       margin: 0 auto;

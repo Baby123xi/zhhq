@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="zdate">
   <NavBar title="日程安排" :isBack="true"  rightIcon='icon-shangbao' @rightActionF="transNew"/>
   <vue-event-calendar
       :events="demoEvents"
@@ -64,10 +64,10 @@ export default {
 </script>
 
 <style>
-body, html {
-  background-color: #FFF;
-}
 
+.zdate{
+  background:#fff;
+}
 
   .__vev_calendar-wrapper .events-wrapper .event-item .title {
     text-align: left;

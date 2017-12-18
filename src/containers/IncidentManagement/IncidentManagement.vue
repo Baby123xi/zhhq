@@ -152,39 +152,6 @@ export default {
 .iMagement-list{
     background:#fff;
     padding:0 10px;
-    >li{
-      padding:8px 0;
-      border-bottom:1px solid  #f1f1f1;
-      display:flex;
-      flex-direction:row;
-      justify-content:space-between;
-      align-items:center;
-      >.im-list-c{
-         
-             >h3{
-          font-size:18px;
-
-      }
-      >.img-list-bottom{
-         margin-top:5px;
-         >p{
-            margin-top:5px;
-            >span{
-                font-size:14px;
-                &:nth-of-type(2){
-                  margin-left:10px;
-                }
-                color:#929294;
-            }  
-          }
-       }
-       
-      }
-      >.im-list-img{
-          height:rem(100px);
-          width:rem(100px);
-      }
-     
-    }
+    
 }
 </style>

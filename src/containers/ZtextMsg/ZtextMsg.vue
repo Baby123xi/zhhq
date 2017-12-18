@@ -1,9 +1,9 @@
 <template>
   <div class="" style="height:100%">
     <NavBar    leftIcon="icon-fanhui"   fixed="true" title="工作日志" @leftActive="back()"  />
-    <CheckBox @taskSearch="taskSearch"/>
+    <CheckBox @taskSearch="taskSearchs"/>
     <div class="logList" style="width: 100%">
-      <router-link :to="{path: 'ZtextMsgD', query: {taskIds: v.taskIds}}"  class="" v-for="(v,index) in logList" :key="index" :logList=logList>
+      <router-link :to="{path: 'ZtextMsgD', query: {taskIds: v.taskIds}}"  class="" v-for="(v,index) in logList" :key="index" :logList="logList">
         <div class="listItem">
             <div class="listItemTop">
               <div class="logProject">{{ v.title }}</div>
@@ -34,7 +34,7 @@ export default {
     this.getLogList(searchDate)
   },
   methods: {
-    taskSearch(selMsg, intMsg) {
+    taskSearchs(selMsg, intMsg) {
       let searchDate = options.searchDate + '&' + selMsg + '=' + intMsg
       console.log(searchDate)
       // this.getLogList(searchDate)

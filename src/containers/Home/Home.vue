@@ -14,7 +14,7 @@
          </Carousel>
         </div>
        <GridList/>
-          
+       <HotsNews/> 
        
      
   </div>
@@ -23,6 +23,7 @@
 <script>
 import NavBar  from '../../components/NavBar/NavBar'
 import GridList  from './GridList'
+import HotsNews  from './HotsNews'
 import { Carousel, Slide } from 'vue-carousel';
 export default {
   name: 'Home',
@@ -36,7 +37,8 @@ export default {
       NavBar,
       GridList,
       Carousel,
-      Slide
+      Slide,
+      HotsNews
   }
 }
 </script>

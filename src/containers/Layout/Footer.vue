@@ -1,22 +1,22 @@
 <template>
-  <footer>
+
       <div class="footer">
            <ul>
-             <li v-for="(v,i) in  items"><router-link :to="v.url" :title="v.name"><p :class="['iconfont',v.icon]"></p><span>{{v.name}}</span></router-link></li>
+             <li v-for="(v,i) in  items"><router-link :to="v.url"><p :class="['iconfont',v.icon]"></p><span>{{v.name}}</span></router-link></li>
            </ul>
       </div>
 
-  </footer>
+
 </template>
 
 <script>
 export default {
-  name: 'footer',
+  name: 'vfooter',
   data(){
     return{
       items:[
         {"name":"主页","url":'/home',"icon":'icon-zhuye'},
-        {"name":"人员定位","url":'/find',"icon":'icon-faxian'},
+        {"name":"事件分布","url":'/find',"icon":'icon-faxian'},
     
        
         {"name":"我的","url":'/my',"icon":'icon-wode'}

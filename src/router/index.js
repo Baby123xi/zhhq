@@ -17,6 +17,7 @@ import ZtextMsgDetail from '@/containers/ZtextMsg/ZtextMsgDetail'
 import ZtextMsgD from '@/containers/ZtextMsgD/ZtextMsgD'
 import CheckBox from '@/components/CheckBox/CheckBox'
 import ZgridTask from '@/containers/ZgridTask/ZgridTask'
+import Find from '@/containers/Find/Find'
 
 
 import My from '@/containers/My/My'
@@ -39,7 +40,12 @@ export default new Router({
       path: '/my',
       name: 'My',
       component: My
-        }
+        },
+      {
+      path: '/Find',
+      name: 'Find',
+      component: Find
+      }
       ]
      },
      {
@@ -106,6 +112,8 @@ export default new Router({
       name: 'ZgridTask',
       component: ZgridTask
      }
+  
+    
       
   ]
 })

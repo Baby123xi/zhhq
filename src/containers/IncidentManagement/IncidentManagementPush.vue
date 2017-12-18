@@ -1,6 +1,6 @@
 <template>
   <div class="iMagementPush" style="height:100%">
-       <NavBar    leftIcon="icon-fanhui"   fixed="true" title="新建日程" @leftActive="back()"  />
+       <NavBar    leftIcon="icon-fanhui"   fixed="true" title="事件上报" @leftActive="back()"  />
        <main class="main" style="background:#f0eff4;height:100%;">
            <div class="push-form">
                <p>事件类型：

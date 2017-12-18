@@ -25,5 +25,6 @@ export default {
   @import "../../assets/style/base.scss";
   .layout{
     background: #fff;
+   height:100%;
   }
 </style>

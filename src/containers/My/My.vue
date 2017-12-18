@@ -69,7 +69,7 @@
                  
                        <li>
                           <a  href="javascript:;" style="
-    justify-content: center;text-align:'center'" @click="this.$root.logout">
+    justify-content: center;text-align:'center'" >
                             
                              <div class="item-l" >
                                     退出登录
@@ -93,12 +93,12 @@ export default {
   },
   
   mounted(){
-     let   user=this.$root.isLogin();
-    //  alert(user.loginName);
+    //  let   user=this.$root.isLogin();
+    // //  alert(user.loginName);
  
-    if(user||user.loginName){
-      this.username=user.loginName
-    }
+    // if(user||user.loginName){
+    //   this.username=user.loginName
+    // }
   },
   
   components:{

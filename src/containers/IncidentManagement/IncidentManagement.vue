@@ -1,7 +1,7 @@
 <template>
   <div class="iMagement">
          <NavBar   rightIcon='icon-shangbao' @rightActionF="toPush()"   title="事件管理"  />
-        <main class="main" style="background:#f0eff4">
+        <main class="main" style="background:#f0eff4;height:auto;">
            <ul class="gruop-button">
                 <li>待处理<span>10</span></li>
                 <li>处理中<span>20</span></li>
@@ -121,7 +121,7 @@ export default {
     line-height:rem(65px);
      font-size:14px;
      justify-content: space-around;
-     margin:10px 0;
+    
     >li{
         flex-basis:rem(220px);
         height:rem(65px);

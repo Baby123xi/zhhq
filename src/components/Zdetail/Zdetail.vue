@@ -33,7 +33,8 @@ export default {
       dTitle: '',
       time: '',
       author: '',
-      dContent: ''
+      dContent: '',
+      fabuman: ''
     }
   },
   methods: {
@@ -46,9 +47,18 @@ export default {
           var dataList = data.demoList[0]
           this.dTitle = dataList.title
           this.time = getDate(dataList.datetime, '-')
-          this.author = '发布人：' + dataList.fabuman
+          this.author = dataList.fabuman
+          this.fabuman = '发布人：' + this.author
           this.dContent = dataList.tearter
         }
+        this.changeReadState()
+      })
+    },
+    changeReadState() {
+      var change = options.changeAd + this.$route.query.ids + '&title=' + this.dTitle + '&shifou=Y&fabuman=' + this.author + '&tearter=' + this.dContent + '&datetime=' + this.time
+      this.$http.get(change)
+      .then((res) => {
+        console.log(res.data.msg)
       })
     }
   }

@@ -35,7 +35,7 @@
              </div>
            </div>
        </main>
-       <zalert v-show="isShow" :content="alertCon" @alert="alertClick"/>
+       <zalert v-show="isShow" :content="alertCon" @alert="alertClick" :isBack="goBack"/>
   </div>
   </div>
 </template>
@@ -49,6 +49,7 @@ export default {
   data () {
     return {
       isShow: false,
+      goBack: false,
       alertCon: '',
       title: '',
       date: '',
@@ -94,14 +95,17 @@ export default {
       this.$http.get(options.pubDate + pubStr)
       .then((res) => {
         if (res.data.result == "success") {
-          console.log(res.data.msg)
           this.inforAlert('新建成功')
+          
+          this.goBack = true
         }
       })
     },
     alertClick() {
       this.isShow = !this.isShow
-      this.back()
+      if (this.goBack) {
+        this.back()
+      }
     }
   },
   components: {

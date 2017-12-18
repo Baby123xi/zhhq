@@ -16,6 +16,7 @@ import ZtextMsg from '@/containers/ZtextMsg/ZtextMsg'
 import ZtextMsgDetail from '@/containers/ZtextMsg/ZtextMsgDetail'
 import ZtextMsgD from '@/containers/ZtextMsgD/ZtextMsgD'
 import CheckBox from '@/components/CheckBox/CheckBox'
+import ZgridTask from '@/containers/ZgridTask/ZgridTask'
 
 
 import My from '@/containers/My/My'
@@ -100,8 +101,11 @@ export default new Router({
       path: '/checkBox',
       name: 'CheckBox',
       component: CheckBox
+     },{
+      path: '/zgridTask',
+      name: 'ZgridTask',
+      component: ZgridTask
      }
-     
-     
+      
   ]
 })

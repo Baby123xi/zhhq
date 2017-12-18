@@ -15,13 +15,13 @@ export default {
   data () {
     return {
        list:[
-           {name:"通知公告",icon:require('../../assets/images/icon_1.png'),routeName:'Notice'},
+           {name:"通知公告",icon:require('../../assets/images/icon_home1_03.png'),routeName:'Notice'},
            
-            {name:"网格事件上报",icon:require('../../assets/images/icon_3.png'),routeName:'IncidentManagementPush'},
-            {name:"网格任务管理",icon:require('../../assets/images/icon_4.png'),routeName:'ZgridTask'},
-            {name:"日程安排",icon:require('../../assets/images/icon_5.png'),routeName:'Zdate'},
-            {name:"工作日志",icon:require('../../assets/images/icon_6.png'),routeName:'ZtextMsg'},
-            {name:"新闻资讯",icon:require('../../assets/images/icon_2.png'),routeName:''}
+            {name:"网格事件上报",icon:require('../../assets/images/icon_home2_03.png'),routeName:'IncidentManagementPush'},
+            {name:"网格任务管理",icon:require('../../assets/images/icon_home3_03.png'),routeName:'ZgridTask'},
+            {name:"日程安排",icon:require('../../assets/images/icon_home5_03.png'),routeName:'Zdate'},
+            {name:"工作日志",icon:require('../../assets/images/icon_home9_02.png'),routeName:'ZtextMsg'},
+            {name:"新闻资讯",icon:require('../../assets/images/icon_home5_03.png'),routeName:''}
        ]
     }
   }
@@ -38,11 +38,12 @@ export default {
     flex-direction:row;
     text-align:center;
    
-    height: 100%;
+   
     background: #fff;
+    overflow:hidden;
     .item{
       position:relative;
-      padding:rem(25px) rem(10px);
+      padding:rem(15px) rem(10px);
      
       flex-basis:33.333%;
       display:flex;
@@ -73,7 +74,7 @@ export default {
      }
       img{
           width:rem(110px);
-           height:rem(110px);
+          height:rem(110px);
       }
       span{
           margin:6px 0;

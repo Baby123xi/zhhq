@@ -44,7 +44,7 @@ export default {
     padding: 5px 10px;
     
     .item-top{
-         padding: 10px 0;
+       
          font-size: 14px;
          display: flex;
          color: #000;
@@ -57,7 +57,7 @@ export default {
         }
     }
      .item-bottom{
-         padding: 10px 0;
+      
            display: flex;
            justify-content: space-between;
            p{

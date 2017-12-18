@@ -1,16 +1,16 @@
 <template>
   <div class="iMagementPush" style="height:100%">
-       <NavBar    leftIcon="icon-fanhui"   fixed="true" title="新建日程" @leftActive="back()"  />
+       <NavBar    leftIcon="icon-fanhui"   fixed="true" title="事件上报" @leftActive="back()"  />
        <main class="main" style="background:#f0eff4;height:100%;">
            <div class="push-form">
                <p>事件类型：
                     <select>
-                       <option value="0">类型1</option>
-                        <option value="0">类型1</option>
-                         <option value="0">类型1</option>
-                          <option value="0">类型1</option>
-                           <option value="0">类型1</option>
-                            <option value="0">类型1</option>
+                      <option value="0">类型1</option>
+                      <option value="1">类型2</option>
+                      <option value="2">类型3</option>
+                      <option value="3">类型4</option>
+                      <option value="5">类型5</option>
+                      <option value="6">类型6</option>
                     </select>
                </p>
                <p>紧急程度：

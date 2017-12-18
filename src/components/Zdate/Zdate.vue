@@ -47,7 +47,8 @@ export default {
       })
     },
     handleDayChanged(day) {
-      console.log(day)
+      // console.log(day)
+      console.log(day.date)
     },
     handleMonthChanged(month){
         console.log(month)

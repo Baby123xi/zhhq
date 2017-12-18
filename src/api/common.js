@@ -1,5 +1,5 @@
-export const baseUrl = '121.40.241.28:7070/zhxz/app'
-// export const baseUrl = '/app'
+// export const baseUrl = '121.40.241.28:7070/zhxz/app'
+export const baseUrl = '/app'
 export const options = {
   searchAd: baseUrl + '/demoAction.action?demo&xType=selectx',
   searchDate: baseUrl + '/demoAction.action?demo&xType=selectc',

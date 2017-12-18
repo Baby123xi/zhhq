@@ -24,7 +24,7 @@ export default {
 <style scoped lang="scss">
   @import "../../assets/style/base.scss";
   .layout{
-    background: #fff;
+    background: #edebe8;
    height:100%;
   }
 </style>

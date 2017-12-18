@@ -46,8 +46,8 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .home{
-  background:#fff;
 
+   min-height:100%;
 
   .VueCarousel{
 $h: rem(430px);

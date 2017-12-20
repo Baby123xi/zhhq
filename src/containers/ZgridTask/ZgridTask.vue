@@ -8,7 +8,7 @@
                 <li>已处理<span>30</span></li>
             </ul>
             <ul class="iMagement-list">
-                <ImItem/>
+                <ImItem :taskManaList="taskList"/>
                <!-- <li>
                     <div class="im-list-c">
                           <h3>罗坊镇2017年第二批村庄规划编制项目（一标段）</h3>
@@ -82,6 +82,14 @@ export default {
   name: '',
   data () {
     return {
+      taskList: [
+        {id: 0, title: "罗坊镇2017年第二批村庄规划编制项目（一标段）", manageMan: "周子", managePlace: "江西-新余市", manageTime: "2017-7-11", imgSrc: "http://jx.people.com.cn/NMediaFile/2013/0130/LOCAL201301300926000216693760662.JPG", manageType: "w"},
+        {id: 1, title: "智慧垦区基础通信工程招标公告", manageMan: "吴丑", managePlace: "江西-新余市", manageTime: "2017-8-27", imgSrc: "http://upload.newsxy.com/2015/0806/1438849725819.jpg", manageType: "y"},
+        {id: 2, title: "LED显示屏及会议音视频系统中标结果", manageMan: "郑寅", managePlace: "江西-新余市", manageTime: "2017-9-7", imgSrc: "http://upload.newsxy.com/2015/0717/1437117151395.jpg", manageType: "c"},
+        {id: 3, title: "南英垦区中小企业孵化园基础设施项目全过程咨询及招标代理服务预中标结果", manageMan: "王卯", managePlace: "江西-新余市", manageTime: "2017-10-11", imgSrc: "http://jx.people.com.cn/NMediaFile/2013/0130/LOCAL201301300926000216693760662.JPG", manageType: "c"},
+        {id: 4, title: "南英垦区罗坊街道招牌拆除及更换招标公告", manageMan: "冯辰", managePlace: "江西-新余市", manageTime: "2017-9-26", imgSrc: "http://upload.newsxy.com/2015/0806/1438849725819.jpg", manageType: "w"},
+        {id: 5, title: "南英垦区智慧通信基础建设中标结果", manageMan: "陈巳", managePlace: "江西-新余市", manageTime: "2017-10-9", imgSrc: "http://upload.newsxy.com/2015/0717/1437117151395.jpg", manageType: "w"},
+      ]
    
     }
   },

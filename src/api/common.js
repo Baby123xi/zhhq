@@ -5,6 +5,8 @@ export const options = {
   searchDate: baseUrl + '/demoAction.action?demo&xType=selectc',
   searchDateIds: baseUrl + '/demoAction.action?demo&xType=selectc&taskIds=',
   searchIdNow: baseUrl + '/demoAction.action?demo&xType=selectx&ids=',
+  searchManageAll: baseUrl + '/demoAction.action?eventUploads&operationType=selectsjEM',
+  searchManagePie: baseUrl + '/demoAction.action?eventUploads&operationType=selectsjEM&sjEMids=',
   pubAd: baseUrl + '/demoAction.action?dateAll&yType=add_A',
   pubDate: baseUrl + '/demoAction.action?dateAll&yType=add_B',
   changeAd: baseUrl + '/demoAction.action?dateAll&yType=update_A&ids=',

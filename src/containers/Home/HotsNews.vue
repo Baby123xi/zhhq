@@ -5,7 +5,7 @@
            <router-link :to="{path: 'ZgridTask'}" class="more">更多</router-link>
        </div>
        <ul class="iMagement-list">
-            <ImItem/>
+            <ImItem :taskManaList="sliceList"/>
        </ul>
 
   </div>
@@ -13,11 +13,35 @@
 
 <script>
 import ImItem  from '../../components/ImItem'
+import { options } from '../../api/common'
+import { add0, getDate } from '../../api/timeFormat'
 export default {
   name: 'HotsNews',
+  created() {
+    const ser = options.searchManageAll
+    this.getManageList(ser)
+  },
+  computed: {
+    sliceList() {
+      return this.manageList.slice(0, 3)
+    }
+  },
   data () {
     return {
-      
+      manageList: []
+    }
+  },
+  methods: {
+    getManageList(ser) {
+      this.$http.get(ser)
+      .then((res) => {
+        if (res.data.result === '') {
+          this.manageList = res.data.sjList
+          for (var i = 0; i < this.manageList.length; i++) {
+            this.manageList[i].manageTime = getDate(this.manageList[i].manageTime, "-")
+          }
+        }
+      })
     }
   },
   components:{

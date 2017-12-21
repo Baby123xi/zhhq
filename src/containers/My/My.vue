@@ -52,17 +52,6 @@
                           </router-link>
                        </li>
                        
-                       <li>
-                          <router-link to="/version">
-                               <div class="item-l">
-                                     <span class="iconfont icon-chakan item-icon"></span>
-                                     <span>版本更新</span>
-                               </div>
-                               <div class="item-r">
-                                   <span class="iconfont icon-fangxiang"></span>
-                               </div>
-                          </router-link>
-                       </li>
                  </ul>
 
                  <ul class="me-list" style="margin-top:30px">

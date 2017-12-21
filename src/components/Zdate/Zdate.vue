@@ -68,7 +68,4 @@ export default {
 .zdate{
   background:#fff;
 }
-
- 
-
 </style>

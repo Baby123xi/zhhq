@@ -20,7 +20,7 @@ import ZtextMsgD from '@/containers/ZtextMsgD/ZtextMsgD'
 import CheckBox from '@/components/CheckBox/CheckBox'
 import ZgridTask from '@/containers/ZgridTask/ZgridTask'
 import Find from '@/containers/Find/Find'
-
+import ZgridTaskD from '@/containers/ZgridTask/ZgridTaskD'
 
 import My from '@/containers/My/My'
 import Login from '@/containers/Login/Login'
@@ -114,6 +114,7 @@ export default new Router({
       name: 'ZgridTask',
       component: ZgridTask
      },{
+<<<<<<< HEAD
       path: '/about',
       name: 'About',
       component: About
@@ -123,6 +124,14 @@ export default new Router({
       component: Instr
      }
      
+=======
+      path: '/ZgridTaskD',
+      name: 'ZgridTaskD',
+      component: ZgridTaskD
+     }
+    
+  
+>>>>>>> 5d877c6b32c5f59406f1b4d3ca91d94607b198b0
     
       
   ]

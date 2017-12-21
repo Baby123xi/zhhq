@@ -63,6 +63,7 @@ export default {
     position:fixed;
     z-index: 99;
     box-shadow: 0  0  2px #fff;
+    z-index:9999;
     .iconfont{
       font-size:rem(50px);
     }

@@ -1,18 +1,23 @@
 <template>
 <div>
-  <li class="ImItem" v-for="(v, index) in taskManaList" :key=" v.id ">
+<router-link :to="{path: 'ZgridTaskD', query: {ids:v.ids}}"   class="ImItem" v-for="(v, index) in taskManaList" :key=" v.id " tag="li">
+
      
          <div class="im-list-c">
                           <h3>{{ v.title }}</h3>
                           <div class="img-list-bottom">
                              <p><span>反映人：{{ v.manageMan }}</span><span>地点：{{ v.managePlace }}</span></p>
-                             <p><span>反映时间：{{ v.manageTime }}</span></p>
+                             <p>
+                               <span>反映时间：{{ v.manageTime }}</span>
+                               <span  :style="{color:setStatusColor(v.manageType)}">{{setStatus(v.manageType)}}</span>
+                             </p>
+                            
                           </div>
            </div>
            <img class="im-list-img"  :src="v.imgSrc" />
         
  
-  </li>
+  </router-link>
 </div>
 </template>
 
@@ -23,6 +28,28 @@ export default {
   data () {
     return {
       
+    }
+  },
+  methods:{
+    setStatusColor(type){
+      switch(type){
+        case 'y':
+        return '#dd524d';
+        case 'w':
+        return '#eab04c';
+        case 'c':
+        return '#77be84'; 
+      }
+    },
+    setStatus(type){
+       switch(type){
+        case 'y':
+        return '已处理';
+        case 'w':
+        return '未处理';
+        case 'c':
+        return '处理中'; 
+      }
     }
   }
 }
@@ -39,14 +66,15 @@ export default {
       justify-content:space-between;
       align-items:center;
       >.im-list-c{
-         
-             >h3{
+         flex:1;
+         >h3{
           line-height:23px;     
           font-size:16px;
 
       }
       >.img-list-bottom{
          margin-top:5px;
+         flex-direction:row;
          >p{
             margin-top:5px;
             >span{

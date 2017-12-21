@@ -100,8 +100,10 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .main{
-     padding-top:$navHeight;
-  overflow:hidden;
+     position:fixed;
+     top:$navHeight;
+     width:100%;
+     overflow:hidden;
   
 }
 .my{

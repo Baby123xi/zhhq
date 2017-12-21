@@ -10,7 +10,30 @@
     <script src="./static/js/mescroll.min.js" ></script>
      <script src="http://api.map.baidu.com/api?v=2.0&ak=hT0FY3ovBXpd4zxaUjK7jrPwQ6KwgHe8"></script>
   	<script type="text/javascript" src="http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"></script> 
-  <body>
+  <style>
+ .__vev_calendar-wrapper .events-wrapper .event-item .title {
+    text-align: left;
+    padding-right: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .__vev_calendar-wrapper .events-wrapper .event-item .desc {
+    text-align: left;
+    text-indent: 2em;
+    line-height: 1.4;
+  }
+  .__vev_calendar-wrapper .events-wrapper .date {
+    padding: 6px 0;
+  }
+  .__vev_calendar-wrapper .events-wrapper {
+    /* display: none; */
+  }
+  .__vev_calendar-wrapper .cal-wrapper .cal-body .weeks, .__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item .date-num, .__vev_calendar-wrapper .cal-wrapper .cal-header .title {
+    font-size: 16px !important;
+}
+</style>
+    <body>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>

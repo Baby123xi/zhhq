@@ -114,7 +114,6 @@ export default new Router({
       name: 'ZgridTask',
       component: ZgridTask
      },{
-<<<<<<< HEAD
       path: '/about',
       name: 'About',
       component: About
@@ -122,16 +121,13 @@ export default new Router({
       path: '/instr',
       name: 'Instr',
       component: Instr
-     }
-     
-=======
+     },{
       path: '/ZgridTaskD',
       name: 'ZgridTaskD',
       component: ZgridTaskD
      }
     
   
->>>>>>> 5d877c6b32c5f59406f1b4d3ca91d94607b198b0
     
       
   ]

@@ -1,38 +1,36 @@
 <template>
-<div>
-<router-link :to="{path: 'ZnoticeDetail', query: {ids: v.ids}}"  class="" v-for="(v,index) in noticeList" :key="index">
-  <div class="notice-item">
-      <div class="item-top">
-          <h2>{{ v.fabuman }}</h2>
-          <span>{{ v.datetime }}</span>
+
+<router-link :to="{path: 'ZnoticeDetail', query: {ids: itemData.ids}}"   class="notice-item">
+ 
+      <div class="item-fl">
+           <div class="item-top">
+                <h2>{{ itemData.fabuman }}</h2>
+                <span>{{itemData.datetime }}</span>
+           </div>
+           <p class="title">{{ itemData.title }}</p>
       </div>
-    <div class="item-bottom">
-          <p>{{ v.title }}</p>
+
+         
           
-          <span :class="{'blue': v.shifou === '已读'}">{{ v.shifou }}</span>
-    </div>
-  </div>
+          <span :class="{'blue':itemData.shifou === '已读'}">{{ itemData.shifou }}</span>
+ 
+
 </router-link>
-</div>
+
 </template>
 
 <script>
 import { add0,getDate } from '../../api/timeFormat'
 export default {
   name: 'NoticeItem',
-  props: ['noticeList'],
-  created() {
-    // this.getNoticeList()
-    
-  },
-  data () {
-    return {
-      
-    }
-  },
-  methods: {
-
+  props:{
+      itemData:{
+          type:Object,
+          require:true
+      }
   }
+
+ 
 }
 </script>
 
@@ -40,36 +38,41 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .notice-item{
-    background: #fff;
-    padding: 5px 10px;
-    
-    .item-top{
-       
+  
+    padding: 10px 10px;
+    border-bottom:1px solid #e6e5e5;
+   
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+  
+    .item-fl{
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
          font-size: 14px;
          display: flex;
          color: #000;
-
+        .item-top{
+            display:flex;
+            flex-direction:row;   
+             justify-content:space-between;
+        } 
         h2{
-            font-size: 14px;
+            font-size: 16px;
         }
-        span{
-            margin-left:5px;
+        .title{
+            margin-top:8px;
+           color:#666;
         }
     }
-     .item-bottom{
-      
-           display: flex;
-           justify-content: space-between;
-           p{
-               color:#989898;
-           }
-           span{
-               color:#f00;
-               &.blue {
-                   color: blue;
-               }
-           }
-           border-bottom:1px solid #e6e5e5;
-    }
+    .blue {
+        margin-left:10px;
+       color: blue;
+        }
+         
+          
+   
 }
 </style>

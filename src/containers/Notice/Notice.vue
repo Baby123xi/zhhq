@@ -2,7 +2,7 @@
   <div class="notice">
           <NavBar title="通知公告" rightIcon='icon-shangbao' @rightActionF="transNew"/>
            <div  class="list">
-              <NoticeItem :noticeList="noticeList1"/>
+              <NoticeItem  v-for="(v,index) in noticeList1"  :itemData="v" key="index"/>
            </div>
   </div>
 </template>
@@ -61,5 +61,6 @@ export default {
 .list{
   padding-top:$navHeight;
   overflow-y:auto;
+  background:#fff;
 }
 </style>

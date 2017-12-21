@@ -90,5 +90,6 @@ export default {
   .__vev_calendar-wrapper .cal-wrapper .cal-body .weeks, .__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item .date-num, .__vev_calendar-wrapper .cal-wrapper .cal-header .title {
     font-size: 16px;
 }
+  
 
 </style>

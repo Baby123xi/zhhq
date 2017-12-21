@@ -67,6 +67,9 @@ export default {
   height:100%;
   background:#fff;
 }
+.login .main {
+  padding-top: $navHeight;
+}
 .login-form{
 
 

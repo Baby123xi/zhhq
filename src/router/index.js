@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '@/containers/Layout/Layout'
+import About from '@/containers/Layout/About'
+import Instr from '@/containers/Layout/Instr'
 import Home from '@/containers/Home/Home'
 import Zinformation from '@/containers/Zinformation/Zinformation'
 import ZnoticeDetail from '@/containers/ZnoticeDetail/ZnoticeDetail'
@@ -111,8 +113,16 @@ export default new Router({
       path: '/zgridTask',
       name: 'ZgridTask',
       component: ZgridTask
+     },{
+      path: '/about',
+      name: 'About',
+      component: About
+     },{
+      path: '/instr',
+      name: 'Instr',
+      component: Instr
      }
-  
+     
     
       
   ]

@@ -63,32 +63,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
 
 .zdate{
   background:#fff;
 }
 
-  .__vev_calendar-wrapper .events-wrapper .event-item .title {
-    text-align: left;
-    padding-right: 120px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .__vev_calendar-wrapper .events-wrapper .event-item .desc {
-    text-align: left;
-    text-indent: 2em;
-    line-height: 1.4;
-  }
-  .__vev_calendar-wrapper .events-wrapper .date {
-    padding: 6px 0;
-  }
-  .__vev_calendar-wrapper .events-wrapper {
-    /* display: none; */
-  }
-  .__vev_calendar-wrapper .cal-wrapper .cal-body .weeks, .__vev_calendar-wrapper .cal-wrapper .cal-body .dates .item .date-num, .__vev_calendar-wrapper .cal-wrapper .cal-header .title {
-    font-size: 16px;
-}
+ 
 
 </style>

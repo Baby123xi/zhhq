@@ -23,7 +23,15 @@ export default {
   },
   computed: {
     sliceList() {
-      return this.manageList.slice(0, 3)
+      let TodoList=[];
+      this.manageList.map((item,idnex)=>{
+        if(TodoList.length<=3){
+           if(item.manageType=='w')
+             TodoList.push(item);
+        }
+         
+      })
+      return TodoList
     }
   },
   data () {
@@ -67,7 +75,7 @@ export default {
         color:#666;
     }
     h2{
-        font-size:18px;
+        font-size:16px;
         font-weight:bold;
        margin:0;
        padding-left:5px;

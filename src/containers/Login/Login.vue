@@ -61,11 +61,17 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style  lang="scss">
+<style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .login{
   height:100%;
   background:#fff;
+ 
+}
+.main{
+  position:fixed;
+  top:$navHeight;
+   width:100%;
 }
 .login .main {
   padding-top: $navHeight;

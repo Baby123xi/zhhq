@@ -32,8 +32,12 @@ export default {
 <style scoped lang="scss">
   @import "../../assets/style/base.scss";
   .about {
+    background:#fff;
+     min-height:100%;
     .aboutMsg {
-      padding: $navHeight 8px;
+      position:fixed;
+      top: $navHeight;
+      padding:10px;
       line-height: 1.4;
       >p {
         color: #288bf0;

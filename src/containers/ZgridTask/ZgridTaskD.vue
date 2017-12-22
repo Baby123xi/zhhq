@@ -3,35 +3,28 @@
        <NavBar    leftIcon="icon-fanhui"   fixed="true" title="事件详情" @leftActive="back()"  />
        <main class="main" style="background:#f0eff4;height:100%;">
            <div class="push-form">
-               <p>事件类型： </p>
-               <p>紧急程度：特急 
+              <!-- <p>事件类型： </p>-->
+               <p>紧急程度：{{content.emergencyDegree=='YB'?'一般':'紧急'}}
                </p>
-               <p>
+               <!--<p>
                处理方式：自己处理 
             
-               </p>
+               </p>-->
                <p>
-               上报地点：杭州电子科技大学
+               上报地点：{{content.adreeNamr}}
                 <p>
-               反&nbsp;映&nbsp;人&nbsp;：二月
+               反&nbsp;映&nbsp;人&nbsp;：{{content.receiveMan}}
                </p>
-                <p>
-               反映人电话: 18758716921
-               </p>
+               
                 <p>
                处理前图片：
-                   <span style="color:#288bf0">添加</span>
+                   <img :src="content.photos" style="width:60%"/>
                </p>
-                <p>
-                处理后图片：
-                   <span style="color:#288bf0">添加</span>
-               </p>
-              <p>  <textarea   style="resize:none;width:100%;height:80px" placeholder="请输入处理前描述" rows="3" cols="50" value=""></textarea></p>
-             <p>  <textarea  style="resize:none;width:100%;height:80px" placeholder="请输入处理后描述" rows="3" cols="50" value=""></textarea></p>
-            <!-- <div class="sj-btns">
-                 <a href="javascript:;" class="sj-btn">提交</a>
-                 <a href="javascript:;" class="sj-btn">取消</a>
-             </div>-->
+               
+              <p>备注：
+                  <span   style="margin-top:10px;resize:none;width:100%;height:80px"  >{{content.problem}}</span>
+              </p>
+             
            </div>
        </main>
   </div>
@@ -47,11 +40,15 @@ export default {
     content:{}
     }
   },
+  mounted(){
+     this.getData();
+  },
    methods:{
        getData(){
        this.$http.get(options.searchManagePie+this.$route.query.ids)
        .then(res=>{
-           let content=res.data.sjList[0];
+           this.content=res.data.sjList[0];
+          // console.log(content);
        })
        },
        back(){
@@ -71,7 +68,9 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .main{
-     padding-top:$navHeight;
+    position:fixed;
+     top:$navHeight;
+     width:100%;
  
 }
 .push-form{
@@ -80,7 +79,7 @@ export default {
     background:#fff;
     border-radius:15px;
   p{
-    padding:rem(15px) 0;
+    padding:rem(25px) 0;
     font-size:14px;
   border-bottom:1px solid  #f1f1f1;
    input[type="text"]{

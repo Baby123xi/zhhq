@@ -1,22 +1,17 @@
 <template>
 <div>
-<router-link :to="{path: 'ZgridTaskD', query: {ids:v.ids}}"   class="ImItem" v-for="(v, index) in taskManaList" :key=" v.id " tag="li">
-
-     
-         <div class="im-list-c">
-                          <h3>{{ v.title }}</h3>
-                          <div class="img-list-bottom">
-                             <p><span>反映人：{{ v.manageMan }}</span><span>地点：{{ v.managePlace }}</span></p>
-                             <p>
-                               <span>反映时间：{{ v.manageTime }}</span>
-                               <span  :style="{color:setStatusColor(v.manageType)}">{{setStatus(v.manageType)}}</span>
-                             </p>
-                            
-                          </div>
-           </div>
-           <img class="im-list-img"  :src="v.imgSrc" />
-        
- 
+  <router-link :to="{path: 'ZgridTaskD', query: {ids:v.ids}}"   class="ImItem" v-for="(v, index) in taskManaList" :key=" v.id " tag="li">
+    <div class="im-list-c">
+      <h3>{{ v.title }}</h3>
+      <div class="img-list-bottom">
+          <p><span>反映人：{{ v.manageMan }}</span><span>地点：{{ v.managePlace }}</span></p>
+          <p>
+            <span>反映时间：{{ v.manageTime }}</span>
+            <span  :style="{color:setStatusColor(v.manageType)}">{{setStatus(v.manageType)}}</span>
+          </p>
+      </div>
+    </div>
+    <img class="im-list-img"  :src="v.imgSrc" />
   </router-link>
 </div>
 </template>

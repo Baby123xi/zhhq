@@ -3,17 +3,16 @@
        <NavBar    leftIcon="icon-fanhui"   fixed="true" title="事件上报" @leftActive="back()"  />
        <main class="main" style="background:#f0eff4;height:100%;">
            <div class="push-form">
-               <p>事件类型：
+               <!--<p>事件类型：
                     <select v-model="eventType">
                         <option value="0">类型1</option>
                      
                     </select>
-               </p>
+               </p>-->
                <p>紧急程度：
                  <label><input  v-model="eventDegree" type="radio" value="YB" />一般 </label> 
                  <label><input  v-model="eventDegree" type="radio" value="GG" />紧急 </label> 
-              
-               </p>
+              </p>
              
                <p>
                上报地点：<input type="text" value="" />
@@ -81,7 +80,8 @@ export default {
 <style scoped lang="scss">
 @import "../../assets/style/base.scss";
 .main{
-     padding-top:$navHeight;
+   position:fixed;
+    top:$navHeight;
  
 }
 .push-form{

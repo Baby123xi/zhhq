@@ -1,7 +1,7 @@
 <template>
   <div class="my">
         
-         <NavBar    fixed="true" title="我的" />
+         <NavBar  :isBack="false"  fixed="true" title="我的" />
          <main class="main">
                  <ul class="me-list">
                       <li  class="me-list-first">

@@ -1,6 +1,6 @@
 <template>
   <div class="map" style="height:100%;witdh:100%">
-        <NavBar    fixed="true" title="事件分布" />
+        <NavBar   :isBack="false" fixed="true" title="事件分布" />
         <main class="main"  style="height:100%;witdh:100%">
            	  <div id="allmap"></div>
         </main>

@@ -17,11 +17,12 @@ export default {
        list:[
            {name:"通知公告",icon:require('../../assets/images/icon_home1_03.png'),routeName:'Notice'},
            
-            {name:"网格事件上报",icon:require('../../assets/images/icon_home2_03.png'),routeName:'IncidentManagementPush'},
+            {name:"网格事件上报",icon:require('../../assets/images/icon_home5_03.png'),routeName:'IncidentManagementPush'},
             {name:"网格任务管理",icon:require('../../assets/images/icon_home3_03.png'),routeName:'ZgridTask'},
+             {name:"走访轨迹",icon:require('../../assets/images/icon_home2_03.png'),routeName:'Trajectory'},
             {name:"日程安排",icon:require('../../assets/images/icon_home5_03.png'),routeName:'Zdate'},
             {name:"工作日志",icon:require('../../assets/images/icon_home9_02.png'),routeName:'ZtextMsg'},
-            {name:"新闻资讯",icon:require('../../assets/images/icon_home5_03.png'),routeName:''}
+        
        ]
     }
   }

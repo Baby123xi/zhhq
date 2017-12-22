@@ -73,9 +73,9 @@ export default {
   top:$navHeight;
    width:100%;
 }
-.login .main {
-  padding-top: $navHeight;
-}
+// .login .main {
+//   padding-top: $navHeight;
+// }
 .login-form{
 
 

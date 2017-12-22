@@ -2,21 +2,22 @@
 <div>
   <router-link :to="{path: 'ZgridTaskD', query: {ids:v.ids}}"   class="ImItem" v-for="(v, index) in taskManaList" :key=" v.id " tag="li">
     <div class="im-list-c">
-      <h3>{{ v.title }}</h3>
+      <h3>{{ v.problem }}</h3>
       <div class="img-list-bottom">
-          <p><span>反映人：{{ v.manageMan }}</span><span>地点：{{ v.managePlace }}</span></p>
+          <p><span>反映人：{{ v.receiveMan }}</span><span>地点：{{ v.adreeNamr }}</span></p>
           <p>
-            <span>反映时间：{{ v.manageTime }}</span>
+            <span>反映时间：{{ setTime(v.visitingTime) }}</span>
             <span  :style="{color:setStatusColor(v.manageType)}">{{setStatus(v.manageType)}}</span>
           </p>
       </div>
     </div>
-    <img class="im-list-img"  :src="v.imgSrc" />
+    <img class="im-list-img"  :src="v.photos" />
   </router-link>
 </div>
 </template>
 
 <script>
+import { add0, getDate } from '../api/timeFormat'
 export default {
   name: 'ImItem',
   props: ["taskManaList"],
@@ -26,6 +27,10 @@ export default {
     }
   },
   methods:{
+
+    setTime(time){
+     return   getDate(time,'/');
+    },
     setStatusColor(type){
       switch(type){
         case 'y':
@@ -63,9 +68,18 @@ export default {
       >.im-list-c{
          flex:1;
          >h3{
+           margin-bottom:10px;
           line-height:23px;     
           font-size:16px;
-
+     
+ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    display: box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
       }
       >.img-list-bottom{
          margin-top:5px;

@@ -50,8 +50,8 @@ export default {
        postStr:'0',
        eventType:'0',
        eventDegree:'YB',
-       eventpPeople:'张鹏',
-       eventContent:'dasdadsasdasd'
+       eventpPeople:'二月',
+       eventContent:'一切安好'
     }
   },
    methods:{

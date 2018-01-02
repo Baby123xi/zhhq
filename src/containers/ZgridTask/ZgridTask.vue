@@ -4,9 +4,11 @@
         <main class="main" style="background:#f0eff4;height:auto;">
            <ul class="gruop-button">
                 <!-- <li>待处理<span>{{ waitHandle }}</span></li>
-                <li>处理中<span>{{ Handling }}</span></li>
+                <li>待处理<span>{{ Handling }}</span></li>
                 <li>已处理<span>{{ Handled }}</span></li> -->
-                <li @click="selctType(v.manageType)" v-for="(v,index) in  typeNumberList">{{setStatus(v.manageType)}}<span>{{v.nums}}</span></li>
+                <li @click="selctType('w')" >待处理<span>{{typeNumberW}}</span></li>
+                  <li @click="selctType('c')" >处理中<span>{{typeNumberC}}</span></li>
+                    <li @click="selctType('y')" >已处理<span>{{typeNumberY}}</span></li>
                <!-- <li>处理中<span>20</span></li>
                 <li>已处理<span>30</span></li>-->
             </ul>
@@ -32,7 +34,10 @@ export default {
       waitHandle: '',
       Handling: '',
       Handled: '',
-      typeNumberList:[]
+      typeNumberList:[],
+      typeNumberW:0,
+      typeNumberY:0,
+      typeNumberC:0
     }
   },
   created() {
@@ -41,8 +46,10 @@ export default {
     
   },
    methods:{
+
     selctType(type){
-         const ser = options.searchManageAll
+      console.log(type);
+        const ser = options.searchManageAll
         this.getManageList(ser+'&manageType='+type)
     },
      setStatus(type){
@@ -55,7 +62,7 @@ export default {
         return '处理中'; 
       }
     },
-       back(){
+     back(){
 
        this.$router.go(-1);
      
@@ -68,7 +75,15 @@ export default {
         .then((res) => {
           if (res.data.result === '') {
             this.taskList = res.data.sjList;
-            this.typeNumberList=res.data.ZTList
+            this.typeNumberList=res.data.ZTList;
+             this.typeNumberList.map((item,index)=>{
+                   if(item.manageType=="y")
+                       this.typeNumberY=item.nums
+                    if(item.manageType=="w")
+                     this.typeNumberW=item.nums
+                     if(item.manageType=="c")
+                      this.typeNumberC=item.nums
+             })
             // var wHandleNum, 
             for (var i = 0; i < this.taskList.length; i++) {
               this.taskList[i].manageTime = getDate(this.taskList[i].manageTime, "-")

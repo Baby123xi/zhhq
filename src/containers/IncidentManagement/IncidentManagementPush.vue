@@ -13,36 +13,42 @@
                  <label><input  v-model="eventDegree" type="radio" value="YB" />一般 </label> 
                  <label><input  v-model="eventDegree" type="radio" value="GG" />紧急 </label> 
               </p>
-             
                <p>
-               上报地点：<input type="text" value="" />
+               上报时间：<input type="date" v-model="eventTime" />
+               </p>
+               <p @click="showMap">
+               上报地点：<span   >{{eventAddress}}</span>
                </p>
                 <p>
                反映人&nbsp;&nbsp;：<input type="text"  v-model="eventpPeople" value="" />
                </p>
                
-                <p>
+                <!-- <p>
                处理前图片：
                    <span style="color:#288bf0">添加</span>
                </p>
                 <p>
                 处理后图片：
                    <span style="color:#288bf0">添加</span>
-               </p>
+               </p>-->
               <p>  <textarea   style="resize:none;width:100%;height:80px" placeholder="请输入处理前描述" v-model="eventContent" rows="3" cols="50" value=""></textarea></p>
-             <p>  <textarea  style="resize:none;width:100%;height:80px" placeholder="请输入处理后描述" rows="3" cols="50" value=""></textarea></p>
+             <!--<p>  <textarea  style="resize:none;width:100%;height:80px" placeholder="请输入处理后描述" rows="3" cols="50" value=""></textarea></p>-->
              <div class="sj-btns">
                  <a href="javascript:;" class="sj-btn"  @click="postContent">提交</a>
                  <a href="javascript:;" class="sj-btn">取消</a>
              </div>
            </div>
+
        </main>
+        <selectMapAddress  v-show="isShowMap" @closeMap="closeMap"/>
   </div>
 </template>
 
 <script>
 import { options } from '../../api/common'
 import NavBar  from '../../components/NavBar/NavBar'
+import  selectMapAddress  from '../../components/selectMapAddress'
+import { add0, getDate } from '../../api/timeFormat'
 export default {
   name: '',
   data () {
@@ -50,17 +56,37 @@ export default {
        postStr:'0',
        eventType:'0',
        eventDegree:'YB',
-       eventpPeople:'二月',
-       eventContent:'一切安好'
+       eventpPeople:'',
+       eventContent:'',
+       eventTime:new Date(),
+       isShowSelectMap:true,
+       isShowMap:false,
+       eventAddress:'',
+       eventLoaction:''
+
     }
   },
+  mounted(){
+  //this.getLocation();
+  },
    methods:{
-     postContent(){
-       this.postStr="&receiveMan="+this.eventpPeople+"&emergencyDegree="+this.eventDegree;
-       this.$http.get(options.ManagePush+this.postStr)
-       .then(res=>{
-         console.log(res.data);
-       })
+
+     showMap(){
+        this.isShowMap=true;
+     },
+      closeMap(data){
+        console.log(data);
+        this.eventAddress=data.address;
+        this.eventLoaction=data.location;
+         this.isShowMap=false;
+      },
+      postContent(){
+      this.postStr="&jingWei="+this.eventLoaction+"&receiveMan="+this.eventpPeople+"&emergencyDegree="+this.eventDegree+"&visitingTime="+getDate(this.eventTime,'-')+"&adreeNamr="+this.eventAddress+"&problem="+this.eventContent;
+        this.$http.get(options.ManagePush+this.postStr)
+        .then(res=>{
+         if(res.data.ZTList.length>0)
+            alert("上传成功");
+        })
       
      },
        back(){
@@ -70,7 +96,8 @@ export default {
    }
   },
     components:{
-    NavBar
+    NavBar,
+    selectMapAddress
    
   }
 }
@@ -90,7 +117,7 @@ export default {
     background:#fff;
     border-radius:15px;
   p{
-    padding:rem(15px) 0;
+    padding:rem(25px) 0;
     font-size:14px;
   border-bottom:1px solid  #f1f1f1;
    input[type="text"]{

@@ -16,7 +16,7 @@
                                </div>
                           </router-link>
                        </li>
-                        <li>
+                         <!-- <li>
                           <a href="">
                                <div class="item-l">
                                       <span class="iconfont icon-fenxiang item-icon"></span>
@@ -26,9 +26,9 @@
                                    <span class="iconfont icon-fangxiang"></span>
                                </div>
                           </a>
-                       </li>
+                       </li>-->
                        
-                       <li>
+                     <!--  <li>
                           <router-link to="/instr">
                                <div class="item-l">
                                      <span class="iconfont icon-fangxiang item-icon"></span>
@@ -38,7 +38,7 @@
                                    <span class="iconfont icon-fangxiang"></span>
                                </div>
                           </router-link>
-                       </li>
+                       </li>-->
                        
                        <li>
                           <router-link to="/about">
@@ -54,7 +54,7 @@
                        
                  </ul>
 
-                 <ul class="me-list" style="margin-top:30px">
+                  <!-- <ul class="me-list" style="margin-top:30px">
                  
                        <li>
                           <a  href="javascript:;" style="
@@ -66,7 +66,7 @@
                             
                           </a>
                        </li>
-                 </ul>
+                 </ul>-->
          </main>
   </div>
 </template>

@@ -5,7 +5,7 @@
               <form class="login-form">
                  <input type="text" placeholder="请输入用户名" class="input-text" v-model="username"> 
                   <input type="password" placeholder="请输入密码" class="input-text" v-model="password">
-                  <p style="text-align:right"><span>还没有账户？</span><router-link  to="/register" style="color:#288bf0">注册</router-link ></p>
+                  <p style="text-align:right"><span>我忘记了密码？</span><router-link  to="/register" style="color:#288bf0">找回</router-link ></p>
 
                  <input type="button" value="登录" class="input-button"  @click="login">
               </form>
@@ -17,14 +17,22 @@
 import NavBar from '../../components/NavBar/NavBar.vue'
 export default {
   name: 'login',
+  created: {
+
+  },
   data () {
     return {
       password:"zyy",
-      username:"rcst"
+      username:"rcst",
+      userpic: "../../assets/images/userimage"
     }
   },
 
   methods:{
+    loginOrder() {
+      
+    },
+
 
       login(){
           if(!this.username||this.username==""){
@@ -73,9 +81,9 @@ export default {
   top:$navHeight;
    width:100%;
 }
-.login .main {
-  padding-top: $navHeight;
-}
+// .login .main {
+//   padding-top: $navHeight;
+// }
 .login-form{
 
 
